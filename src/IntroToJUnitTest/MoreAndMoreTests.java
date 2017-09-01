@@ -10,14 +10,23 @@ import org.junit.Test;
 
 public class MoreAndMoreTests {
 
-//	@Test
-//	  public void MultTest() {
-//
-//	    assertEquals("10 x 0 = 0", multiply(10, 0));
-//	    assertEquals("10 x 10 = 100", multiply(10, 10));
-//	    assertEquals("8 x 11 = 88", multiply(8, 11));
-//	  }
-//
+	@Test
+	  public void MultTest() {
+
+	    assertEquals("10 x 0 = 0", multiply(10, 0));
+	    assertEquals("10 x 10 = 100", multiply(10, 10));
+	    assertEquals("8 x 11 = 88", multiply(8, 11));
+	  }
+
+	
+
+	private String multiply(int i, int j) {
+		// TODO Auto-generated method stub
+		return ""+i+" x "+j+" = "+(i*j);
+	}
+
+
+
 //	@Test
 //	  public void PrimeTest() {
 //
@@ -29,7 +38,14 @@ public class MoreAndMoreTests {
 //	    assertFalse(isPrime(527));
 //
 //	  }
-//
+
+
+
+	private boolean isPrime(int i) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 //	@Test
 //	  public void SquareTest() {
 //
@@ -52,7 +68,7 @@ public class MoreAndMoreTests {
 //	    assertTrue(isCube(729));
 //	    assertTrue(isCube(1));
 //	    assertFalse(isCube(3));
-//	    assertFalse(isCube(22));
+//    assertFalse(isCube(22));
 //	    assertFalse(isCube(143));
 //
 //	  }
