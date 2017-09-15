@@ -1,6 +1,7 @@
 package SearchingAndSortingAlgorithms;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Algorithms {
@@ -63,24 +64,53 @@ public class Algorithms {
 		return false;
 	}
 
-	public static List<String> sortScores(List<Double> results) {
+	public static ArrayList<String> sortScores(List<Double> results) {
 		// TODO Auto-generated method stub
 		Double x=(double) 0;
 		ArrayList<String> list = new ArrayList<String>();
 		String temp = null;
 		for (int i = 0; i < results.size(); i++) {
-			if(results.get(i)>=x) {
-				x=results.get(i);
-				list.add(""+results.get(i));
-				
+			
+			for (int j = 0; j < results.size(); j++) {
+				if(results.get(j)>results.get(i)) {
+					Double temp1 = results.get(i);
+					results.set(i, results.get(j));
+					results.set(j, temp1);
+					
+			
+				}
 				
 			}
-			else {
-				ArrayList<String>temp1=list;
-				list.removeAll(list);
-				list.add(""+results.get(i)+temp1);
+			
+		}
+		for (int i = 0; i < results.size(); i++) {
+			list.add(results.get(i)+"");
+			
+		}
+	
+		return list;
+	}
+
+	public static Object sortDNA(List<String> unsortedSequences) {
+		// TODO Auto-generated method stub
+		int y=10000000;
+		ArrayList<String> list = new ArrayList<String>();
+		for (int i = 0; i < unsortedSequences.size(); i++) {
+			String x=null;
+			
+			for (int j = 0; j < unsortedSequences.size(); j++) {
+				if(unsortedSequences.get(j).length()<y) {
+					y=unsortedSequences.get(j).length();
+					x=unsortedSequences.get(j);
+				}
+				list.add(x);
+				unsortedSequences.remove(i);
 			}
 		}
+		for (int i = 0; i < unsortedSequences.size(); i++) {
+			
+		}
+		System.out.println(list);
 		return list;
 	}
 	
