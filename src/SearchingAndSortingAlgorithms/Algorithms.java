@@ -72,6 +72,7 @@ public class Algorithms {
 		for (int i = 0; i < results.size(); i++) {
 			
 			for (int j = 0; j < results.size(); j++) {
+				System.out.println(results.get(i).compareTo(results.get(j)));
 				if(results.get(j)>results.get(i)) {
 					Double temp1 = results.get(i);
 					results.set(i, results.get(j));
@@ -95,24 +96,72 @@ public class Algorithms {
 		// TODO Auto-generated method stub
 		int y=10000000;
 		ArrayList<String> list = new ArrayList<String>();
+		String temp = null;
 		for (int i = 0; i < unsortedSequences.size(); i++) {
-			String x=null;
 			
 			for (int j = 0; j < unsortedSequences.size(); j++) {
-				if(unsortedSequences.get(j).length()<y) {
-					y=unsortedSequences.get(j).length();
-					x=unsortedSequences.get(j);
+				if(unsortedSequences.get(j).length()>unsortedSequences.get(i).length()) {
+					String temp1 = unsortedSequences.get(i);
+					unsortedSequences.set(i, unsortedSequences.get(j));
+					unsortedSequences.set(j, temp1);
+					
+			
 				}
-				list.add(x);
-				unsortedSequences.remove(i);
-			}
-		}
+				
+			}		
+		System.out.println(""+list);
+	
+	}
 		for (int i = 0; i < unsortedSequences.size(); i++) {
+			list.add(unsortedSequences.get(i)+"");
 			
 		}
-		System.out.println(list);
 		return list;
-	}
 	
-	//Add other methods here
-}
+	}//Add other methods here
+
+	public static List<String> sortWords(List<String> words) {
+		// TODO Auto-generated method stub
+		int y=10000000;
+		ArrayList<String> list = new ArrayList<String>();
+		String temp = null;
+		for (int i = 0; i < words.size(); i++) {
+			
+			for (int j = 0; j < words.size(); j++) {
+				if(words.get(i).compareTo(words.get(j))<0) {
+					String temp1 = words.get(i);
+					words.set(i, words.get(j));
+					words.set(j, temp1);
+					
+			
+				}
+				
+			}		
+		
+	
+	}
+		for (int i = 0; i < words.size(); i++) {
+			list.add(words.get(i)+"");
+			
+		}
+		
+		for (int i = 0; i < words.size()/2; i++) {
+			System.out.println(list);
+//			String temp1 = null;
+//			temp1=list.get(i);
+//			list.set(i, list.get(list.size()-i-1));
+//			list.set(list.size()-i-1, temp1);
+//			System.out.println(list);
+			
+			
+			
+			
+		}
+		
+		return list;
+	
+	}
+
+	
+	}
+
